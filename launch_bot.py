@@ -38,14 +38,12 @@ async def update_status():
     status = get_minecraft_status()
     #if the server is online
     if status["online"]:
-        status=Status.online
         #update the bot status to online
-        await client.change_presence(activity = CustomActivity(name="Online ✅", emoji="✅"))
+        await client.change_presence(activity = CustomActivity(name="Online ✅", emoji="✅"), status=Status.online)
     #if the server is offline
     else:
-        status=Status.dnd
         #update the bot status to offline
-        await client.change_presence(activity = CustomActivity(name="Offline ❌", emoji="❌"))
+        await client.change_presence(activity = CustomActivity(name="Offline ❌", emoji="❌"), status=Status.dnd)
 
 #run the bot
 client.run(DISCORD_TOKEN)
