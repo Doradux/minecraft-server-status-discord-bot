@@ -6,9 +6,9 @@ from mcstatus import JavaServer
 import os
 
 #discord bot token
-DISCORD_TOKEN = ""
+DISCORD_TOKEN = os.environ.get("DC_TOKEN")
 #minecraft server ip
-MINECRAFT_HOST = ""
+MINECRAFT_HOST = os.environ.get("MN_HOST")
 
 #discord client
 intents = discord.Intents.default()
